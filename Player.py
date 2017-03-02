@@ -133,10 +133,11 @@ class Player:
 					if differences.count((-float("inf"), -1)) == 0:
 						swapped += 1
 
-						time.sleep(1.5)
+						time.sleep(1)
 
 					continue
-				elif swapped >= 3:
+					
+				elif max_difference[0] <= 50 and swapped >= 3:
 					print("There are no good cards in hand at all.")
 
 					if maxest_difference is not None:
@@ -146,6 +147,7 @@ class Player:
 							continue
 
 					swapped = 0
+					
 				else:
 					swapped = 0
 
