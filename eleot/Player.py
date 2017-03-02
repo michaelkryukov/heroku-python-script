@@ -65,9 +65,6 @@ class Player:
 	def do_arena(self):
 		res = self.get("http://elem.mobi/arena/")
 		fight = False
-		swapped = 0
-
-		maxest_difference = None
 
 		while True:
 			if res.url == "http://elem.mobi/arena/":
@@ -104,54 +101,42 @@ class Player:
 					print("Show them what we made of! Arena fight started.")
 					print("Arena id:", arena_id)
 
-				self.arena_cards_parser.feed(res.text)
+				maxest_differences = [None, None, None]
+				
+				for j in range(3):
+					self.arena_cards_parser.feed(res.text)
 
-				differences = [self.get_difference(i, self.arena_cards_parser) for i in range(3)]
-
-				if differences.count((-float("inf"), -1)) == 3:
-					print("No cards in hand! Waiting")
-					time.sleep(1)
-
-					res = self.get("http://elem.mobi/arena/" + arena_id)
-
-					continue
-
-				max_difference = max(differences)
-
-				if max_difference[0] <= 50 and swapped < 3:
-					print("Only bad cards in hand. Changing target.")
-
-					if maxest_difference is None or maxest_difference[0][0] < max_difference[0]:
-						maxest_difference = [max_difference, 0]
-
+					differences = [self.get_difference(i, self.arena_cards_parser) for i in range(3)]
+					
+					maxest_differences[j] = max(differences)
+					
 					if self.arena_cards_parser.change_target_url != "":
 						res = self.get(self.arena_cards_parser.change_target_url)
-						maxest_difference[1] += 1
-					else:
-						res = self.get("http://elem.mobi/arena/" + arena_id)
 
-					if differences.count((-float("inf"), -1)) == 0:
-						swapped += 1
+				the_maxest_differences = max(maxest_differences)
+					
+				for j in range(3):
+					self.arena_cards_parser.feed(res.text)
 
-						time.sleep(1)
+					differences = [self.get_difference(i, self.arena_cards_parser) for i in range(3)]
+					
+					if the_maxest_differences[0] <= max(differences)[0]:
+						max_difference = max(differences)
+						break
+					
+					if self.arena_cards_parser.change_target_url != "":
+						res = self.get(self.arena_cards_parser.change_target_url)
+				
+				hit_link = self.arena_cards_parser.cards_urls[max_difference[1]]
+
+				if hit_link == "":
+					print("There are no cards in hand!")
+
+					time.sleep(1)
+
+					res = self.get("http://elem.mobi/arena/")
 
 					continue
-					
-				elif max_difference[0] <= 50 and swapped >= 3:
-					print("There are no good cards in hand at all.")
-
-					if maxest_difference is not None:
-						for i in range(3 - 3 % maxest_difference[1]):
-							self.get(self.arena_cards_parser.change_target_url)
-
-							continue
-
-					swapped = 0
-					
-				else:
-					swapped = 0
-
-				hit_link = self.arena_cards_parser.cards_urls[max_difference[1]]
 
 				print("Hit enemy for", max_difference[0])
 

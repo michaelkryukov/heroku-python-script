@@ -1,2 +1,5 @@
 ## Private data
 eleot/data.txt
+
+## Cache
+eleot/__pycache__/

@@ -25,7 +25,7 @@ class SiteFriend:
 	def get(self, url, deep=0):
 		print("Trying to visit", url, "(", deep, "times )")
 
-		time.sleep(0.25)
+		time.sleep(0.2)
 
 		result = self.session.get(url, headers=self.headers)
 

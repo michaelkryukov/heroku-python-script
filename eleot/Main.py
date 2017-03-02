@@ -13,13 +13,9 @@ with open("eleot/data.txt") as f:
 	players.append(Player(login, password))
 
 while True:
-	try:
-		for player in players:
-			player.do_duels()
-			player.do_dungeon()
-			player.do_arena()
-	except Exception as e:
-		print(e.message)
-		print("Ignoring it...")
+	for player in players:
+		player.do_duels()
+		player.do_dungeon()
+		player.do_arena()
 
 	time.sleep(5)
