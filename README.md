@@ -1,7 +1,7 @@
 # Template for Python Scrip hosted on Heroku
 
 This is small example of running your own bots with [Heroku](https://www.heroku.com/)
-Here I run my own (bot for some game)[https://github.com/Myzon/bot-for-elem] on heroku.
+Here I run my own [bot for some game](https://github.com/Myzon/bot-for-elem) on heroku.
 But you can run ANY python script with ANY dependaries.
 
 ## Getting Started
