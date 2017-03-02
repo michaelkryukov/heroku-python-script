@@ -108,7 +108,7 @@ class Player:
 
 					differences = [self.get_difference(i, self.arena_cards_parser) for i in range(3)]
 					
-					maxest_differences[j] = max(differences[j])
+					maxest_differences[j] = max(differences)
 					
 					res = self.get(self.arena_cards_parser.change_target_url)
 
@@ -119,7 +119,7 @@ class Player:
 
 					differences = [self.get_difference(i, self.arena_cards_parser) for i in range(3)]
 					
-					if the_maxest_differences[0] == max(differences[j])[0]:
+					if the_maxest_differences[0] == max(differences)[0]:
 						max_difference = max(differences[j])
 						break
 					
