@@ -128,10 +128,7 @@ class Player:
 						res = self.get(self.arena_cards_parser.change_target_url)
 						maxest_difference[1] += 1
 
-					if differences.count((-float("inf"), -1)) == 0:
-						swapped += 1
-
-						time.sleep(1.5)
+					swapped += 1
 
 					continue
 				elif swapped >= 3:
