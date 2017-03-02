@@ -4,7 +4,7 @@ from Player import Player
 
 players = []
 
-with open("data.txt") as f:
+with open("eleot/data.txt") as f:
 	line = f.readline().strip().split(":")
 
 	login = line[0]
