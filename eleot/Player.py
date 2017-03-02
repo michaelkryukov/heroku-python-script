@@ -118,7 +118,7 @@ class Player:
 
 				max_difference = max(differences)
 
-				if max_difference[0] <= 50 and swapped < 3:
+				if max_difference[0] <= -500 and swapped < 3:
 					print("Only bad cards in hand. Changing target.")
 
 					if maxest_difference is None or maxest_difference[0][0] < max_difference[0]:
@@ -130,14 +130,11 @@ class Player:
 					else:
 						res = self.get("http://elem.mobi/arena/" + arena_id)
 
-					if differences.count((-float("inf"), -1)) == 0:
-						swapped += 1
-
-						time.sleep(1)
+					swapped += 1
 
 					continue
 					
-				elif max_difference[0] <= 50 and swapped >= 3:
+				elif max_difference[0] <= -500 and swapped >= 3:
 					print("There are no good cards in hand at all.")
 
 					if maxest_difference is not None:
