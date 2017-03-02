@@ -81,7 +81,3 @@ This project is licensed under GNU General Public License v3.0 - see the [LICENC
 * [Official guide to deploy app](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
 * [Official guide about worker](https://devcenter.heroku.com/articles/background-jobs-queueing)
 * [Article with instructions](http://briancaffey.github.io/2016/04/05/twitter-bot-tutorial.html)
-
-* Made with love <3 
-* I like my dog "Meera"
-* I love Vlada :*
