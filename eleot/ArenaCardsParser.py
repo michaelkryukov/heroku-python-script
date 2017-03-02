@@ -37,7 +37,7 @@ class ArenaCardsParser(Parser):
 
 		if tag == "a":
 			for attr in attrs:
-				if attr == ("class", "btn blue w100px mt5 mr5"):
+				if attr[0] == "class" and attr[1] in ["ml5 btn grey w100px mt5", "btn blue w100px mt5 mr5"]:
 					for attr2 in attrs:
 						if attr2[0] == "href":
 							self.change_target_url = "http://elem.mobi" + attr2[1]
