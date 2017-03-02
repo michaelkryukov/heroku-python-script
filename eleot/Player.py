@@ -127,6 +127,8 @@ class Player:
 					if self.arena_cards_parser.change_target_url != "":
 						res = self.get(self.arena_cards_parser.change_target_url)
 						maxest_difference[1] += 1
+					else:
+						res = self.get("http://elem.mobi/arena/" + arena_id)
 
 					if differences.count((-float("inf"), -1)) == 0:
 						swapped += 1
