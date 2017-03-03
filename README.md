@@ -12,10 +12,10 @@ But you can run ANY python script with ANY dependaries.
 4. Download and install [git](https://git-scm.com/downloads)
 5. Remove eleot/ folder 
 6. Copy your script/ project to repository's folder
-7. Replace "eleot/Main.py" with path to your main executable file in "Procfile":
+7. Replace "script.py" with path to your main executable file in "Procfile":
 
    ```
-   worker: python eleot/Main.py
+   worker: python script.py
    ```
 8. You may select your python version and runtime with "runtime.txt". Read how on [official heroku page](https://devcenter.heroku.com/articles/python-runtimes#selecting-a-runtime)
 9. If you are using non-standart modules, you must add them to requirements.txt
