@@ -1,1 +1,1 @@
-worker: python eleot/Main.py
+worker: python script.py

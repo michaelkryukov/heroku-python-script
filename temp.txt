@@ -1,6 +1,0 @@
-Duels won: 0
-Duels lost: 0
-Duels winrate: 0 %
-Arenas won: 1
-Arenas lost: 1
-Arenas winrate: 50.0 %
