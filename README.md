@@ -7,39 +7,38 @@ You can run ANY python script with ANY dependaries.
 
 1. Download this repository. 
 2. Register on [Heroku](https://www.heroku.com/).
-3. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
-4. Download and install [git](https://git-scm.com/downloads)
-5. Remove eleot/ folder 
-6. Copy your script/ project to repository's folder
-7. Replace "script.py" with path to your main executable file in "Procfile":
-
+3. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up).
+4. Download and install [git](https://git-scm.com/downloads).
+5. Copy your script/ project to repository's folder.
+6. Replace "script.py" with path to your main executable file in "Procfile".
    ```
    worker: python script.py
    ```
-8. You may select your python version and runtime with "runtime.txt". Read how on [official heroku page](https://devcenter.heroku.com/articles/python-runtimes#selecting-a-runtime)
+   
+8. You may select your python version and runtime with "runtime.txt". Read how on [official heroku page](https://devcenter.heroku.com/articles/python-runtimes#selecting-a-runtime).
 9. If you are using non-standart modules, you must add them to requirements.txt
    
    To check which version of module you have on your computer, run pip freeze | grep MODULE_NAME in the terminal. 
    
-   You will get line MODULE_NAME==MODULE_VERSION. Add this line to "requirements.txt"
+   You will get line MODULE_NAME==MODULE_VERSION. Add this line to "requirements.txt".
    
    You should remove any unused modules from "requirements.txt".
    
    Repeat this process for all the modules you are planning to use.
    
-10. Now open terminal(or do it other way, but i will explain how to do it in terminal on Ubuntu) and create git repository
+10. Now open terminal(or do it other way, but i will explain how to do it in terminal on Ubuntu) and create git repository.
    
    ```
    git init
    ```
    
-   Create heroku app
+   Create heroku app.
    
    ```
    heroku create
    ```
    
-   And push your code into heroku app:
+   And push your code into heroku app.
    
    ```
    git add .
@@ -47,12 +46,12 @@ You can run ANY python script with ANY dependaries.
    git push heroku master
    ```
 
-11. Run you worker with command:
+11. Run you worker with following command.
    ```
    heroku ps:scale worker=1
    ```
    
-12. Now everything should be working. You can check your logs with:
+12. Now everything should be working. You can check your logs with.
 
    ```
    heroku logs --tail
@@ -69,7 +68,7 @@ You can run ANY python script with ANY dependaries.
 
 ## Authors
 
-* **Michael Krukov** - creator - [Myzon](https://github.com/Myzon)
+* @michaelkrukov - http://michaelkrukov.ru/
 
 ## License
 
