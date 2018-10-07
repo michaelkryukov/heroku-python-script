@@ -56,15 +56,13 @@ You can run ANY python script with ANY dependaries.
    heroku logs --tail
    ```
    
-12. Open the URL where the script is deployed using the below command.
+12. You can open the URL where the script is deployed using the below command (if you are deploying site).
    
    ```
    heroku open
    ```
    
-13. From now on you can use usual git commands(push, add, commit etc.) to update your app.
-
-   Everytime you push heroku master your app gets redeployed.
+13. From now on you can use usual git commands(push, add, commit etc.) to update your app. Everytime you push heroku master your app gets redeployed.
 
 ### Prerequisites
 
