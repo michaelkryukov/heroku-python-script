@@ -15,6 +15,8 @@ You can run ANY python script with ANY dependaries.
    worker: python script.py
    ```
    
+   If you are getting errors, you can try replace `worker` with `web`.
+   
 7. You may select your python version and runtime with "runtime.txt". Read how on [official heroku page](https://devcenter.heroku.com/articles/python-runtimes#selecting-a-runtime).
 8. If you are using non-standart modules, you must add them to requirements.txt
    
