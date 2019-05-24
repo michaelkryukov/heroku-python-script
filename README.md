@@ -1,79 +1,78 @@
-# Template for Python Script hosted on Heroku
+# Template for hosting python scripts and applications on Heroku
 
-This is small example of running your script with [Heroku](https://www.heroku.com/). You can run any python script with any dependencies.
+This is a small example of running your script with
+[Heroku](https://www.heroku.com/). You can run almost any python application
+with any dependencies.
 
 ## Getting Started
 
-1. Download this repository. 
-2. Register on [Heroku](https://www.heroku.com/).
-3. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up).
-4. Download and install [git](https://git-scm.com/downloads).
-5. Copy your script/ project to repository's folder.
-6. 
-   Replace "script.py" with path to your main executable file in "Procfile".
-   
-   ```
+1. Download or clone this repository
+2. Register on [Heroku](https://www.heroku.com/)
+3. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
+4. Download and install [git](https://git-scm.com/downloads)
+5. Copy your script or project to this repository's folder
+6. Replace "script.py" with the path to your main executable file in `Procfile`
+
+   ```procfile
    worker: python script.py
    ```
-   
+
    > If you are getting errors, you can try replace `worker` with `web`.
-   
-7. 
-   You may select your python version and runtime with "runtime.txt". Read how on [official heroku page](https://devcenter.heroku.com/articles/python-runtimes#selecting-a-runtime).
-8. 
-   If you are using non-standart modules, you must add them to requirements.txt. To check which version of module you have on your computer, run `pip freeze` in the terminal. You will get lines `MODULE_NAME==MODULE_VERSION`. 
-   
-   Add lines with required modules to your `requirements.txt`. Don't kepp unused modules in `requirements.txt`. This file should contain every module your application needs. Heroku will install modules from this file.
-   
-9. 
-   Now open terminal (or do it other way, but i will explain how to do it in terminal on Ubuntu) and create git repository.   
-   
-   9.1. 
-      Initiate git ropository
-      
-      ```
+7. You may select your python version and runtime using `runtime.txt`. Read
+   how on [official heroku page](https://devcenter.heroku.com/articles/python-runtimes#selecting-a-runtime).
+8. If you are using any not built-in modules, you must add them to your
+   `requirements.txt`. To check which version of the module you have, run
+   `pip freeze` in the terminal. You will get lines with information about
+   installed modules and their versions in the format like
+   `MODULE_NAME==MODULE_VERSION`. Add lines with required modules and their
+   versions to your `requirements.txt`. Don't keep unused modules in
+   `requirements.txt`. This file should contain every module your application
+   needs. Heroku will install modules from this file automatically.
+9. Open terminal (or do it another way, but I will explain how to do it in
+   the terminal on Ubuntu) and create a git repository.
+   1. Initiate git repository
+
+      ```bash
       git init
       ```
-   
-   9.2. 
-      Create heroku app.
-   
-      ```
+
+   2. Create heroku application
+
+      ```bash
       heroku create
       ```
-   
-   9.3.
-      Commit and push your code into `heroku master`.
-   
-      ```
+
+   3. Add, commit and push your code into branch `master` of the
+      remote `heroku`.
+
+      ```bash
       git add .
       git commit -m "initial commit"
       git push heroku master
       ```
 
-10. 
-   Run you worker with following command.
-   
-   ```
-   heroku ps:scale worker=1
-   ```
-   
-11. 
-   Now everything should be working. You can check your logs with.
+10. Specify the amount of worker that will run your application
 
-   ```
-   heroku logs --tail
-   ```
-   
-12. 
-   You can open the URL where the script is deployed using the below command (if you are deploying site).
-   
-   ```
-   heroku open
-   ```
-   
-13. 
-   From now on you can use usual git commands (push, add, commit etc.) to update your app. Everytime you `push heroku master` your app gets redeployed.
+    ```bash
+    heroku ps:scale worker=1
+    ```
+
+11. Now everything should be working. You can check your logs with this command
+
+    ```bash
+    heroku logs --tail
+    ```
+
+12. You can open the URL where the script is deployed using the below
+    command (if you are deploying web application)
+
+    ```bash
+    heroku open
+    ```
+
+13. From now on you can use usual git commands (push, add, commit, etc.)
+    to update your app. Every time you `push heroku master` your
+    app gets redeployed with updated source code
 
 ### Prerequisites
 
@@ -82,11 +81,7 @@ This is small example of running your script with [Heroku](https://www.heroku.co
 
 ## Authors
 
-* @michaelkrukov - http://michaelkrukov.ru/
-
-## License
-
-This project is licensed under GNU General Public License v3.0 - see the [LICENCE.md](LICENCE.md) file for details
+* @michaelkrukov - https://michaelkrukov.ru/
 
 ## Acknowledgments
 
