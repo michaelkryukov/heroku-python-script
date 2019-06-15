@@ -74,6 +74,12 @@ with any dependencies.
     to update your app. Every time you `push heroku master` your
     app gets redeployed with updated source code
 
+14. To stop the script from running scale down the dyno with this command
+
+    ```bash
+    heroku ps:scale worker=1
+    ```
+
 ### Prerequisites
 
 * [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
