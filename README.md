@@ -74,6 +74,12 @@ with any dependencies.
     to update your app. Every time you `push heroku master` your
     app gets redeployed with updated source code
 
+14. To stop your application scale down the amount of workers with like this
+
+     ```bash
+    heroku ps:scale worker=0
+    ```
+
 ### Prerequisites
 
 * [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
