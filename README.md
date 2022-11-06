@@ -1,8 +1,8 @@
 # Template for hosting python scripts and applications on Heroku
 
 This is a small example of running your script with
-[Heroku](https://www.heroku.com/). You can run almost any python application
-with any dependencies.
+[Heroku](https://www.heroku.com/). You can run almost any python
+application with any dependencies.
 
 ## Getting Started
 
@@ -11,13 +11,8 @@ with any dependencies.
 3. Download and install [Heroku CLI](https://devcenter.heroku.com/articles/getting-started-with-python#set-up)
 4. Download and install [git](https://git-scm.com/downloads)
 5. Copy your script or project to this repository's folder
-6. Replace "script.py" with the path to your main executable file in `Procfile`
-
-   ```procfile
-   worker: python script.py
-   ```
-
-   > If you are getting errors, you can try replace `worker` with `web`.
+6. Replace "script.py" with the path to your main executable file in
+   `Procfile`. For details about `Procfile` refer to the [doct](https://devcenter.heroku.com/articles/procfile).
 7. You may select your python version and runtime using `runtime.txt`. Read
    how on [official heroku page](https://devcenter.heroku.com/articles/python-runtimes#selecting-a-runtime).
 8. If you are using any not built-in modules, you must add them to your
@@ -25,9 +20,11 @@ with any dependencies.
    `pip freeze` in the terminal. You will get lines with information about
    installed modules and their versions in the format like
    `MODULE_NAME==MODULE_VERSION`. Add lines with required modules and their
-   versions to your `requirements.txt`. Don't keep unused modules in
-   `requirements.txt`. This file should contain every module your application
-   needs. Heroku will install modules from this file automatically.
+   versions to your `requirements.txt`. Heroku will install modules from this
+   file automatically.
+
+   > If you are using some kind of virtual environment, you can generate
+   > ready-to-use `requirements.txt` with `pip freeze > requirements.txt`.
 9. Open terminal (or do it another way, but I will explain how to do it in
    the terminal on Ubuntu) and create a git repository.
    1. Initiate git repository
